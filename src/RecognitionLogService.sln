@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29709.97
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecognitionLogService", "RecognitionLogService\RecognitionLogService.csproj", "{C37FFAE7-D0CD-4B98-9212-D6CC1267DC71}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStorage", "DataStorage\DataStorage.csproj", "{567C5099-D72B-4D7D-9D62-3160473A2C2E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C37FFAE7-D0CD-4B98-9212-D6CC1267DC71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C37FFAE7-D0CD-4B98-9212-D6CC1267DC71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C37FFAE7-D0CD-4B98-9212-D6CC1267DC71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C37FFAE7-D0CD-4B98-9212-D6CC1267DC71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{567C5099-D72B-4D7D-9D62-3160473A2C2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{567C5099-D72B-4D7D-9D62-3160473A2C2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{567C5099-D72B-4D7D-9D62-3160473A2C2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{567C5099-D72B-4D7D-9D62-3160473A2C2E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {344C47B4-1548-401C-8D8B-63C9133D521A}
+	EndGlobalSection
+EndGlobal
