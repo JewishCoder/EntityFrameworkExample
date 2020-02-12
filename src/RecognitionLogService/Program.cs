@@ -15,14 +15,14 @@ namespace RecognitionLogService
 {
 	class Program
 	{
-		static void Main(string[] args)
+		static async Task Main(string[] args)
 		{
 			try
 			{
 				var host = Dns.GetHostName();
 				var ip = Dns.GetHostEntry(Dns.GetHostName()).AddressList.First(x => x.AddressFamily == AddressFamily.InterNetwork).ToString();
 
-				//await DatabaseInitializationService.InitializeAsync(default);
+				await DatabaseInitializationService.InitializeAsync(default);
 
 				var adoRepository = new AdoNetRepository();
 				adoRepository.AddServerMetadata(new[] { new ServerMetadata { HostName = Dns.GetHostName() } });

@@ -5,11 +5,17 @@ using System.Data.Entity;
 
 namespace DataStorage
 {
-	[DbConfigurationType(typeof(DbContextConfiguration))]
+	[DbConfigurationType(typeof(Framework.DbContextConfiguration))]
 	public class Context : DbContext
 	{
+		public Context() 
+		{
+			Database.SetInitializer(new MigrateDatabaseToLatestVersion<Context, Migrations.Configuration>());
+		}
+
 		public Context(DbConnection connection) : base(connection, true)
 		{
+			Database.SetInitializer(new MigrateDatabaseToLatestVersion<Context, Migrations.Configuration>());
 		}
 
 		protected override void OnModelCreating(DbModelBuilder modelBuilder)

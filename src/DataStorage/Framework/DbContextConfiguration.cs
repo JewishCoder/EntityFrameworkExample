@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Data.Entity.SqlServer;
-using System.Data.Entity.SqlServerCompact;
 using System.Data.SqlClient;
-using System.Data.SqlServerCe;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,7 +17,7 @@ namespace DataStorage.Framework
 		public DbContextConfiguration()
 		{
 			SetSqlServerProvider();
-			SetSqlServerCeProvider();
+			//SetSqlServerCeProvider();
 			//SetPostgreProvider();
 		}
 
@@ -28,6 +26,7 @@ namespace DataStorage.Framework
 		protected virtual void SetSqlServerProvider()
 		{
 			const string SqlName = "System.Data.SqlClient";
+			var defaultConnectionString = @"Data Source=DESKTOP-O2VNVEV\SQLEXPRESS;Initial Catalog=RecognitionLogService;Integrated Security=True";
 
 			SetProviderFactory(
 				providerInvariantName: SqlName,
@@ -37,23 +36,23 @@ namespace DataStorage.Framework
 				providerInvariantName: SqlName,
 				provider: SqlProviderServices.Instance);
 
-			SetDefaultConnectionFactory(connectionFactory: new SqlConnectionFactory());
+			SetDefaultConnectionFactory(connectionFactory: new SqlConnectionFactory(defaultConnectionString));
 		}
 
-		protected virtual void SetSqlServerCeProvider()
-		{
-			const string SqlCeName = "System.Data.SqlServerCe.4.0";
+		//protected virtual void SetSqlServerCeProvider()
+		//{
+		//	const string SqlCeName = "System.Data.SqlServerCe.4.0";
 
-			SetProviderFactory(
-				providerInvariantName: SqlCeName,
-				providerFactory: SqlCeProviderFactory.Instance);
+		//	SetProviderFactory(
+		//		providerInvariantName: SqlCeName,
+		//		providerFactory: SqlCeProviderFactory.Instance);
 
-			SetProviderServices(
-				providerInvariantName: SqlCeName,
-				provider: SqlCeProviderServices.Instance);
+		//	SetProviderServices(
+		//		providerInvariantName: SqlCeName,
+		//		provider: SqlCeProviderServices.Instance);
 
-			SetDefaultConnectionFactory(connectionFactory: new SqlCeConnectionFactory(SqlCeName));
-		}
+		//	SetDefaultConnectionFactory(connectionFactory: new SqlCeConnectionFactory(SqlCeName));
+		//}
 
 		//protected virtual void SetPostgreProvider()
 		//{

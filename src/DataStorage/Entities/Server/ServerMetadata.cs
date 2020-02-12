@@ -21,7 +21,7 @@ namespace DataStorage.Entities
 					.HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
 				Property(x => x.HostName)
-					.HasColumnName("HostName")
+					.HasColumnName("HostNameTest")
 					.IsRequired();
 			}
 		}
@@ -33,6 +33,7 @@ namespace DataStorage.Entities
 
 		public string HostName { get; set; }
 		
+
 
 		internal static Configuration GetConfiguration() => new Configuration();
 

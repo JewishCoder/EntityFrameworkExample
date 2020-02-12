@@ -16,7 +16,7 @@ namespace DataStorage.Providers
 		{
 			var connectionBuilder = new SqlConnectionStringBuilder
 			{
-				DataSource = @"localhost\SQLEXPRESS01",
+				DataSource = @"DESKTOP-O2VNVEV\SQLEXPRESS",
 				InitialCatalog = "RecognitionLogService",
 				IntegratedSecurity = true,
 			};

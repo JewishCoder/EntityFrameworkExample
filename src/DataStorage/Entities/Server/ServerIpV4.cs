@@ -11,7 +11,7 @@ namespace DataStorage.Entities
 			public IpV4Configuration()
 			{
 				Property(x => x.IpV4)
-					.HasColumnName("IpV4")
+					.HasColumnName("IpAddressV4")
 					.IsRequired();
 
 				Property(x => x.PortV4)
