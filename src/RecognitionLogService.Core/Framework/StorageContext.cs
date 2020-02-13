@@ -1,4 +1,5 @@
 ﻿using DataStorage.Entities;
+using DataStorage.Providers;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,11 @@ namespace RecognitionLogService.Core.Framework
 	class StorageContext : DbContext
 	{
 		private readonly DbConnection _connection;
+
+		public  StorageContext()
+		{
+			_connection = new SqlServerConnectionFactory().CreateConnection();
+		}
 
 		public StorageContext(DbConnection connection)
 		{
